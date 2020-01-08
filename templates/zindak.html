@@ -5,4 +5,27 @@
         <h1>{{ zindak }} 회 진닥했습니다.</h1>
     {% endif %}
     <a class="btn btn-primary" href="zindak/inc" role="button">진닥</a>
+
+    <div style="margin-top: 20px">
+        <form action="/zindak/post" method="post">
+            <div class="form-row">
+                <div class="col-md-2">
+                    <input class="form-control" type="text" name="name" placeholder="이름">
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" name="text" placeholder="내용">
+                </div>
+            </div>
+            <input class="btn btn-primary" style="margin-top: 10px" type="submit" value="등록">
+        </form>
+    </div>
+
+    <div style="margin-top: 20px">
+    {% for comm in commlist %}
+        <div>
+            <h4>{{ comm.name }}</h4>
+            <p>{{ comm.text }}</p>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock %}
