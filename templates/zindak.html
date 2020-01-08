@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% if zindak %}
+        <h1>{{ zindak }} 회 진닥했습니다.</h1>
+    {% endif %}
+    <a class="btn btn-primary" href="zindak/inc" role="button">진닥</a>
+{% endblock %}

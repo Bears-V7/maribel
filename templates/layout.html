@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maribel</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">        <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumbrushscript.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div id="logo" class="text-center">
+            <h1>Maribel</h1>
+            <div>Life is a potato</div>
+        </div>
+
+        <div id="wrapper" class="d-flex flex-row">  
+            <nav id = "main-sidebar" class="navbar navbar-light">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">소개</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">블로그</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">게시판</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/zindak">진닥카운터</a>
+                </li>
+                </ul>
+            </nav>
+
+            <div id="content">
+                {%  block content %}{% endblock %}
+            </div>
+        </div>
+        {% block scripts %}{% endblock %}
+    </body>
+    
+</html>
