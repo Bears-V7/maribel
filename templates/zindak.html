@@ -4,7 +4,7 @@
     {% if zindak %}
         <h1>{{ zindak }} 회 진닥했습니다.</h1>
     {% endif %}
-    <a class="btn btn-primary" href="zindak/inc" role="button">진닥</a>
+    <a id="zindak" onclick="spin()" class="btn btn-primary" href="zindak/inc" role="button">진닥</a>
 
     <div style="margin-top: 20px">
         <form action="/zindak/post" method="post">
@@ -28,4 +28,17 @@
         </div>
     {% endfor %}
     </div>
+
+    <script>
+        var zindak = document.getElementById("zindak");
+        zindak.addEventListener("transitionend", ending);
+        function spin() {
+            zindak.style.transform="rotate(360deg)";
+            zindak.style.transition="transform 1s"
+        }
+        function ending() {
+            zindak.style.transform="rotate(360deg)";
+            zindak.style.transition="transform 1s"
+        }
+    </script>
 {% endblock %}
