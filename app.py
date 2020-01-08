@@ -20,8 +20,8 @@ class Zindak(db.Model):
     def __repr__(self):
         return str(self.count)
 
-datapath = 'D:/home/site/data'
-#datapath = ''
+datapath = 'D:/home/site/data/'
+#datapath = '../data'
 #로컬에서 테스트할땐 이거 쓰셈
 
 @app.route('/')
