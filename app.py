@@ -1,5 +1,6 @@
 from flask import Flask, url_for, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from os import path
 
 app = Flask(__name__)
 
@@ -20,9 +21,7 @@ class Zindak(db.Model):
     def __repr__(self):
         return str(self.count)
 
-datapath = 'D:/home/site/data/'
-#datapath = '../data'
-#로컬에서 테스트할땐 이거 쓰셈
+datapath = path.abspath('..')+('\\data\\')
 
 @app.route('/')
 def index():
