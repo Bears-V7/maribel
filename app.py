@@ -26,12 +26,19 @@ def index():
 
 @app.route('/zindak')
 def zindak():
-    return render_template('zindak.html', zindak=Zindak.query.all()[0])
+    # return render_template('zindak.html', zindak=Zindak.query.all()[0])
+    with open('zindak.txt', 'r') as f:
+        s = f.read()
+    return render_template('zindak.html', zindak=s)
 
 @app.route('/zindak/inc')
 def inc():
-    Zindak.query.first().count = Zindak.query.first().count + 1
-    db.session.commit()
+    # Zindak.query.first().count = Zindak.query.first().count + 1
+    # db.session.commit()
+    with open('zindak.txt', 'r') as f:
+        s = f.read()
+    with open('zindak.txt', 'w') as f:
+        f.write(str(int(s)+1))
     return redirect(url_for('zindak'))
 
 
