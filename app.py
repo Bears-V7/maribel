@@ -21,7 +21,7 @@ class Zindak(db.Model):
     def __repr__(self):
         return str(self.count)
 
-datapath = path.abspath('..')+('\\data\\')
+datapath = path.join(path.abspath('..'), 'data')
 
 @app.route('/')
 def index():
