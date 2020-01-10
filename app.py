@@ -37,7 +37,7 @@ def zindak():
         for i in range(len(lst)-1):
             raw = list(lst[i].split('@NSP@'))
             lst[i] = {'name':raw[0], 'text':raw[1]}
-    return render_template('zindak.html', zindak=s, commlist=lst)
+    return render_template('zindak.html', zindak=s, commlist=list(reversed(lst)))
 
 @app.route('/zindak/inc')
 def inc():
