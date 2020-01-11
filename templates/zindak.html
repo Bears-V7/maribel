@@ -16,7 +16,7 @@
                     <input class="form-control" type="text" name="text" placeholder="내용">
                 </div>
             </div>
-            <input class="btn btn-primary" style="margin-top: 10px" type="submit" value="등록">
+            <input id='sub' class="btn btn-primary" type="submit" value="등록">
         </form>
     </div>
 
@@ -39,6 +39,7 @@
         }
         zindak.style.backgroundColor=color;
         zindak.addEventListener("transitionend", ending);
+        document.addEventListener("mousemove", function(event){mouse(event);});
         function spin() {
             zindak.style.transform="rotate(360deg)";
             zindak.style.transition="transform 1s"
@@ -47,5 +48,10 @@
             zindak.style.transform="rotate(360deg)";
             zindak.style.transition="transform 1s"
         }
+        function mouse(e) {
+            zindak.style.left=max(200, e.clientX-24)+'px';
+            zindak.style.top=e.clientY-8+'px';
+        }
+        function max(a, b) {if (a>b) return a; else return b;}
     </script>
 {% endblock %}
