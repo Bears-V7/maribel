@@ -55,6 +55,7 @@ def inc():
 def post():
     db.session.add(Zindak(id = str(Zindak.query.count()+1), username=request.form['name'], content=request.form['text']))
     db.session.commit()
+    db.session.close()
     #with open(path.join(datapath, 'comments.txt'), 'a', encoding='utf-8') as f:
     #     f.write(request.form['name']+'@NSP@'+request.form['text']+'@CSP@\n')
     return redirect(url_for('zindak'))
