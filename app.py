@@ -8,7 +8,7 @@ app = Flask(__name__)
 datapath = path.join(path.abspath('..'), 'data')
 
 app.config['SECRET_KEY'] = 'hifuclub'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+path.join(datapath, 'site.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+path.join(datapath, 'maribel.db')
 app.config['FLASK_ENV'] = 'production'
 
 db = SQLAlchemy(app)
